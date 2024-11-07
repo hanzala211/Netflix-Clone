@@ -11,7 +11,7 @@ function Cards({ item, apiData, index }) {
     const { image720Url } = useMovies();
     const { setSelectedData, setSelectedID } = useSelect()
     return <div
-        className="relative flex flex-col w-[18rem]"
+        className="relative flex flex-col sm:w-[18rem] w-[10.5rem]"
         onMouseEnter={() => setHoveredIndex(() => index)}
         onMouseLeave={() => setHoveredIndex(null)}
     >

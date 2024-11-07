@@ -68,7 +68,7 @@ export function Shows() {
     return <>
         {!loading ? <section>
             <HeroSection />
-            <div className="-mt-[25vh]">
+            <div className="sm:-mt-[25vh] -mt-[12vh]">
                 {showsData.map((item, i) => {
                     return <TitleCards key={i} index={i} obj={item} />
                 })

@@ -148,9 +148,10 @@ body::-webkit-scrollbar {
 }
 .react-multi-carousel-track {
 	display: flex;
+	padding-left: 180px;
 }
 .custom-carousel > ul > li {
-	width: 19.03rem !important;
+	width: 11.03rem !important;
 	transform-style: flat;
 }
 .customSvg > svg {
@@ -159,5 +160,12 @@ body::-webkit-scrollbar {
 @media (min-width: 640px) {
 	.customSvg > svg {
 		width: 22px;
+	}
+	.custom-carousel > ul > li {
+		width: 19.03rem !important;
+		transform-style: flat;
+	}
+	.custom-carousel > ul {
+		padding-left: 0;
 	}
 }

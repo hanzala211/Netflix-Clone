@@ -16,7 +16,7 @@ export function TitleCards({ obj }) {
     const [isClickable, setIsClickable] = useState(true);
     let timerRef = useRef(null);
     const carouselRef = useRef()
-    const itemsToShow = 6;
+    const itemsToShow = document.querySelector("body").offsetWidth > 640 ? 6 : 2;
     const totalMovies = useMemo(() => apiData.length, [apiData]);
     const totalPages = useMemo(() => Math.ceil(totalMovies / itemsToShow), [totalMovies, itemsToShow]);
     useEffect(() => {
@@ -74,19 +74,19 @@ export function TitleCards({ obj }) {
             items: itemsToShow
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
+            breakpoint: { max: 1024, min: 640 },
             items: itemsToShow
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: itemsToShow
+            breakpoint: { max: 640, min: 0 },
+            items: 2
         }
     };
     return (
         <>
-            <div className="flex flex-col group mt-16 relative px-12">
+            <div className="flex flex-col group mt-16 relative sm:px-12 px-4 w-[100vw] overflow-hidden">
                 <div className="flex items-end justify-between">
-                    <h2 className="text-[30px] font-medium mb-4 relative z-[1]">{obj.heading}</h2>
+                    <h2 className="sm:text-[30px] text-[15px] font-medium mb-4 relative z-[1]">{obj.heading}</h2>
                     <div className="flex gap-0.5 mb-3 mr-5">
                         {Array.from({ length: totalPages }, (_, i) => {
                             return <div className={`w-3 h-0.5 bg-[#4D4D4D] ${currentIndex === i ? "bg-[#AAAAAA]" : ""}`} key={i}></div>
@@ -124,7 +124,7 @@ export function TitleCards({ obj }) {
                 </Carousel>
                 {/* </div> */}
                 <button
-                    className="text-2xl z-[1000] h-[10.5rem] px-2 transition-all duration-300 hover:text-3xl hover:bg-hover-bg opacity-0 group-hover:opacity-100 absolute top-[65%] left-0 rounded-md rounded-l-none transform -translate-y-[50%] flex items-center justify-center cursor-pointer"
+                    className="sm:text-2xl z-[1000] sm:h-[10.5rem] sm:px-2 transition-all duration-300 sm:hover:text-3xl sm:hover:bg-hover-bg opacity-0 group-hover:opacity-100 absolute top-[65%] sm:left-0 -left-4 bg-[#141414b3] rounded-md rounded-l-none transform -translate-y-[50%] flex items-center justify-center cursor-pointer h-[6.2rem] text-[12px] bg-opacity-30"
                     style={{ minWidth: "3rem", maxWidth: "3rem" }}
                     onClick={handlePrevious}
                     disabled={!isClickable}
@@ -132,7 +132,7 @@ export function TitleCards({ obj }) {
                     <FaChevronLeft />
                 </button>
                 <button
-                    className="text-2xl z-[1000] h-[10.5rem] px-2 pr-5 transition-all duration-300 hover:text-3xl hover:bg-hover-bg opacity-0 group-hover:opacity-100 absolute top-[65%] right-0 rounded-md rounded-r-none transform -translate-y-[50%] flex items-center justify-center cursor-pointer"
+                    className="sm:text-2xl z-[1000] sm:h-[10.5rem] sm:px-2 pr-5 transition-all duration-300 sm:hover:text-3xl sm:hover:bg-hover-bg opacity-0 group-hover:opacity-100 absolute top-[65%] sm:right-0 -right-4 bg-[#141414b3]  rounded-md rounded-r-none transform -translate-y-[50%] flex items-center justify-center cursor-pointer h-[6.2rem] text-[12px] bg-opacity-30"
                     style={{ minWidth: "3rem", maxWidth: "3rem" }}
                     onClick={handleNext}
                     disabled={!isClickable}

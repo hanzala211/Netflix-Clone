@@ -15,14 +15,14 @@ export function Footer() {
         }
         return () => previousSearchQuery.current = searchQuery;
     }, [searchQuery])
-    return <footer className="flex flex-col items-start mx-auto w-full max-w-[900px] pt-32 pb-5">
+    return <footer className="flex flex-col items-start mx-auto w-full max-w-[900px] sm:pt-32 pb-5 pt-20 px-10">
         <div className="flex gap-5 text-2xl">
             <FaFacebookF />
             <FaInstagram />
             <FaYoutube />
         </div>
-        <div className="mt-5 flex gap-32">
-            <div className="flex flex-col gap-5">
+        <div className="mt-5 flex sm:gap-32 gap-12 flex-wrap">
+            <div className="flex flex-col sm:gap-5 gap-2">
                 <Link className="hover:underline text-[#808080] text-sm">Audio Description</Link>
                 <Link className="hover:underline text-[#808080] text-sm">Investor Relations</Link>
                 <Link className="hover:underline text-[#808080] text-sm">Legal Notices</Link>
