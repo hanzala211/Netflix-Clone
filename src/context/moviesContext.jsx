@@ -10,7 +10,7 @@ function MovieProvider({ children }) {
 
     const imageBaseUrl = "https://image.tmdb.org/t/p/w1280";
     const image720Url = "https://image.tmdb.org/t/p/w780";
-    const apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiODFjN2Y4MjRhMjRkNDdmODkyODQ1M2RiOTQzODdiYiIsIm5iZiI6MTcyOTc2MzE4NS4wNzc1OTEsInN1YiI6IjY3MWExNmQ4NmU0MjEwNzgwZjc4YmU0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.R2b2G2idAsHZ0gXgc8zLOJqMwmxmcifsBeraV_lUvVI";
+    const apiKey = "YOUR_API_KEY";
 
     const dataContext = useMemo(() => ({
         apiData, imageBaseUrl, heroImage, image720Url, apiKey,

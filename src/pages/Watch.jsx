@@ -45,7 +45,7 @@ export function Watch() {
         const options = {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': '096a25c359msh70e2224e7c8e258p11401ajsn6fb8a6b37e32',
+                'x-rapidapi-key': 'YOUR_API_KEY',
                 'x-rapidapi-host': 'yt-api.p.rapidapi.com'
             }
         };
