@@ -9,7 +9,7 @@ export function RelatedMovies({ item }) {
     return <div className="rounded-md w-[90%] container">
         <div className={`bg-cover bg-no-repeat bg-center  h-[15vh] relative rounded-t-md group cursor-pointer`} style={{ backgroundImage: `url('${image720Url}${item?.backdrop_path || item?.poster_path || "/default-placeholder.png"}')` }}>
             <Link to="/watch" onClick={() => setSelectedPlay(() => item)}>
-                <img src="/public/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className="w-6 h-6 absolute top-2 left-1" />
+                <img src="/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className="w-6 h-6 absolute top-2 left-1" />
                 <p className="text-white text-sm absolute top-2 right-1">{item?.release_date ? item.release_date.slice(0, 4) : (item?.first_air_date ? item.first_air_date.slice(0, 4) : 'N/A')}</p>
                 <Link to="/watch" className="absolute bg-[#2F2F2F] bg-opacity-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 border-[1px] rounded-full p-2"><IoPlay className="text-[20px]" /></Link>
             </Link>
