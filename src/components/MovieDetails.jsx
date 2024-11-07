@@ -53,7 +53,7 @@ export function MovieDetails() {
                     <IoCloseSharp onClick={closeModal} className="absolute right-5 top-5 text-3xl bg-[#141414] cursor-pointer border-[1px] border-[#141414] rounded-full" />
                     <div className={`absolute -translate-y-[50%] left-12 z-20 ${(relatedMovies.length === 0 || relatedMovies !== undefined) ? "top-[18%]" : isOpen ? "top-[10%]" : "top-[18%]"}`}>
                         <div className="flex items-center gap-3">
-                            <img src="/public/images/4375011_logo_netflix_icon.png" className="w-8" alt="Netflix Logo" />
+                            <img src="/images/4375011_logo_netflix_icon.png" className="w-8" alt="Netflix Logo" />
                             <h1 className="tracking-[1rem] font-bold ">{foundData.media_type === "tv" ? "SERIES" : "FILM"}</h1>
                         </div>
                         <h1 className="w-[60%] mb-5 font-bold text-2xl mt-4 ml-2">{foundData.original_name || foundData.title}</h1>

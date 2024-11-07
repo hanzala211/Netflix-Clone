@@ -45,7 +45,7 @@ export function Home() {
                 } finally {
                     storeTime.current = setTimeout(() => {
                         setLoading(false);
-                    }, 2000)
+                    }, 4000)
                 }
             }
         }
