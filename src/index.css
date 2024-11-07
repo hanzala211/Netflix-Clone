@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+	font-family: 'Netflix Sans';
+	src: url(./fonts/NetflixSans-Regular.otf), url(./fonts/NetflixSans-Bold.otf);
+}
+* {
+	font-family: 'Netflix Sans', sans-serif;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #141414;
+	overflow-x: hidden;
+}
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+	z-index: 100;
+	transition: all 0.5s ease;
+}
+.custom-scrollbar::-webkit-scrollbar {
+	width: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: #424242;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: #686868;
+	border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: #888;
+}
+.custom-scrollbar {
+	scrollbar-color: #686868 #424242;
+}
+.slider-container {
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 8px;
+	background: #ddd;
+	border-radius: 5px;
+	outline: none;
+	opacity: 0.7;
+	transition: opacity 0.2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #1976d2;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #1976d2;
+	cursor: pointer;
+}
+
+.slider-value {
+	margin-left: 10px;
+	font-weight: bold;
+}
+.custom-range {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 4px;
+	border-radius: 5px;
+	outline: none;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+	height: 4px;
+	border-radius: 5px;
+}
+
+.custom-range::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 12px;
+	height: 12px;
+	background: #ff0000;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-top: -4px;
+}
+
+.custom-range::-moz-range-track {
+	height: 4px;
+	border-radius: 5px;
+}
+
+.custom-range::-moz-range-thumb {
+	width: 12px;
+	height: 12px;
+	background: #ffffff;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.custom-range::-ms-track {
+	height: 4px;
+	border-radius: 5px;
+	border-color: transparent;
+	color: transparent;
+	width: 100%;
+}
+
+.custom-range::-ms-thumb {
+	width: 12px;
+	height: 12px;
+	background: #ffffff;
+	border-radius: 50%;
+	cursor: pointer;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+.react-multi-carousel-list {
+	overflow: visible;
+}
+.react-multi-carousel-track {
+	display: flex;
+}
+.custom-carousel > ul > li {
+	width: 19.03rem !important;
+	transform-style: flat;
+}
