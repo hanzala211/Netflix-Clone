@@ -102,7 +102,7 @@ export function TitleCards({ obj }) {
                     > */}
                 <Carousel
                     ref={carouselRef}
-                    swipeable={false}
+                    swipeable={true}
                     draggable={false}
                     responsive={responsive}
                     infinite={true}
