@@ -45,7 +45,7 @@ export function Nav() {
     }
     return <nav className={`flex justify-between items-center px-12 h-[70px] transition duration-100 fixed ${isScrolled ? "bg-[#141414] z-[100]" : "bg-transparent"} w-full z-10`}>
         <div className="flex items-center gap-6 text-[14px]">
-            <Link to="/browse" onClick={() => setSearchQuery("")}><img src="/public/images/download1.png" alt="Netflix Log" className="w-[7.5rem]" /></Link>
+            <Link to="/browse" onClick={() => setSearchQuery("")}><img src="/images/download1.png" alt="Netflix Log" className="w-[7.5rem]" /></Link>
             <NavLink
                 className={({ isActive }) =>
                     !isActive ? "hover:text-[#B3B3B3] transition-color duration-500 text-[#E5E5E5]" : "text-white font-bold"
@@ -97,7 +97,7 @@ export function Nav() {
             <p className="text-[15px]">Kids</p>
             <IoMdNotificationsOutline className="text-[17px]" />
             <div onMouseOver={handleHoverIn} onMouseLeave={handleHoverOut} className="flex cursor-pointer items-center gap-2">
-                <img src="/public/images/profile.png" alt="Profile Image" className="rounded-[4px]" />
+                <img src="/images/profile.png" alt="Profile Image" className="rounded-[4px]" />
                 <IoMdArrowDropdown className={isRotated ? "rotate-180 transition-transform duration-100" : "rotate-0 transition-transform duration-100"} />
             </div>
         </div>

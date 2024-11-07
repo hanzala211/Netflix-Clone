@@ -11,7 +11,7 @@ export function HeroSection() {
     return <div className={`bg-cover bg-no-repeat w-full bg-center h-[100vh] z-[0] relative`} style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 5%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(0, 0, 0, 0.7) 95%, rgba(0, 0, 0, 1) 100%), url('${imageBaseUrl}${heroImage.backdrop_path !== null ? heroImage.backdrop_path : heroImage.poster_path}')` }}>
         <div className="absolute top-[55%] -translate-y-1/2 left-12 z-20 ">
             <div className="flex items-center gap-1">
-                <img src="/public/images/4375011_logo_netflix_icon.png" className="lg:w-16 w-8" />
+                <img src="/images/4375011_logo_netflix_icon.png" className="lg:w-16 w-8" />
                 <h1 className="tracking-[1rem] font-bold ">{heroImage.media_type === "tv" ? "SERIES" : "FILM"}</h1>
             </div>
             <div className="font-bold text-3xl lg:text-7xl mt-4 ml-2">

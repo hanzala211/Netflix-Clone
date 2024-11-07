@@ -20,7 +20,7 @@ function Cards({ item, apiData, index }) {
             src={item.backdrop_path ? `${image720Url}${item.backdrop_path}` : '/public/images/Broken.png'}
             alt={item.title}
         />
-        <img src="/public/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className={`lg:w-6 lg:h-6 w-3 h-3  absolute transition-transform duration-300 top-2 left-1 z-[100] ${hoveredIndex === index ? "delay-500 -translate-y-[4.7rem] -translate-x-9 z-[1500000]" : ""}`} />
+        <img src="/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className={`lg:w-6 lg:h-6 w-3 h-3  absolute transition-transform duration-300 top-2 left-1 z-[100] ${hoveredIndex === index ? "delay-500 -translate-y-[4.7rem] -translate-x-9 z-[1500000]" : ""}`} />
         <div
             className={`absolute z-[110] bottom-[-5vw] flex-col w-[100%] py-7 px-5 bg-[#141414] flex gap-3 rounded-b-md transition-transform duration-300 ${hoveredIndex === index ? 'delay-500 opacity-100 scale-125 shadow-md shadow-[#010101]' : 'opacity-0 scale-0'}`}
         >
