@@ -7,10 +7,9 @@ function MovieProvider({ children }) {
     const [heroImage, setHeroImage] = useState({});
     const [playData, setPlayData] = useState([]);
     const [url, setUrl] = useState("");
-
     const imageBaseUrl = "https://image.tmdb.org/t/p/w1280";
     const image720Url = "https://image.tmdb.org/t/p/w780";
-    const apiKey = "YOUR_API_KEY";
+    const apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiODFjN2Y4MjRhMjRkNDdmODkyODQ1M2RiOTQzODdiYiIsIm5iZiI6MTcyOTc2MzE4NS4wNzc1OTEsInN1YiI6IjY3MWExNmQ4NmU0MjEwNzgwZjc4YmU0NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.R2b2G2idAsHZ0gXgc8zLOJqMwmxmcifsBeraV_lUvVI";
 
     const dataContext = useMemo(() => ({
         apiData, imageBaseUrl, heroImage, image720Url, apiKey,
@@ -31,7 +30,6 @@ const SearchContext = createContext();
 
 function SearchProvider({ children }) {
     const [searchQuery, setSearchQuery] = useState("");
-
     const value = useMemo(() => ({ searchQuery, setSearchQuery }), [searchQuery]);
 
     return <SearchContext.Provider value={value}>{children}</SearchContext.Provider>;

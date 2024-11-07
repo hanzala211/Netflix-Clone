@@ -86,7 +86,7 @@ export function TitleCards({ obj }) {
         <>
             <div className="flex flex-col group mt-16 relative px-12">
                 <div className="flex items-end justify-between">
-                    <h2 className="text-[30px] font-medium mb-4 relative">{obj.heading}</h2>
+                    <h2 className="text-[30px] font-medium mb-4 relative z-[1]">{obj.heading}</h2>
                     <div className="flex gap-0.5 mb-3 mr-5">
                         {Array.from({ length: totalPages }, (_, i) => {
                             return <div className={`w-3 h-0.5 bg-[#4D4D4D] ${currentIndex === i ? "bg-[#AAAAAA]" : ""}`} key={i}></div>
