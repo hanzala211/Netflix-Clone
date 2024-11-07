@@ -16,9 +16,11 @@ export function Nav() {
     useEffect(() => {
         window.addEventListener("mousedown", handleClick)
         window.addEventListener("scroll", handleScroll);
+        window.addEventListener("touchmove", handleScroll);
         return () => {
             window.removeEventListener("mouseover", handleHoverIn);
             window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("touchmove", handleScroll);
         }
     })
     function toggleSearch() {
@@ -37,15 +39,16 @@ export function Nav() {
         }
     }
     function handleScroll() {
-        if (window.scrollY > 0) {
+        if (window.scrollY > 0 || document.documentElement.scrollTop > 0) {
+            console.log(isScrolled);
             setIsScrolled(true);
         } else {
             setIsScrolled(false);
         }
     }
-    return <nav className={`flex justify-between items-center px-12 h-[70px] transition duration-100 fixed ${isScrolled ? "bg-[#141414] z-[100]" : "bg-transparent"} w-full z-10`}>
+    return <nav className={`flex justify-between sm:items-center items-start sm:px-12 h-[70px] transition duration-100 fixed ${isScrolled ? "bg-[#141414] z-[100]" : "bg-transparent"} w-full z-10`}>
         <div className="flex items-center gap-6 text-[14px]">
-            <Link to="/browse" onClick={() => setSearchQuery("")}><img src="/images/download1.png" alt="Netflix Log" className="w-[7.5rem]" /></Link>
+            <Link to="/browse" onClick={() => setSearchQuery("")}><img src="/images/download1.png" alt="Netflix Log" className="sm:w-[7.5rem] w-16" /></Link>
             <NavLink
                 className={({ isActive }) =>
                     !isActive ? "hover:text-[#B3B3B3] transition-color duration-500 text-[#E5E5E5]" : "text-white font-bold"

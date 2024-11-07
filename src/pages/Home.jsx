@@ -65,7 +65,7 @@ export function Home() {
     return <>
         {!loading ? <section>
             <HeroSection />
-            <div className="-mt-[25vh]">
+            <div className="lg:-mt-[25vh]">
                 {moviesData.map((item, i) => {
                     return <>
                         <TitleCards key={i} index={i} obj={item} />

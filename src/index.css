@@ -153,3 +153,11 @@ body::-webkit-scrollbar {
 	width: 19.03rem !important;
 	transform-style: flat;
 }
+.customSvg > svg {
+	width: 12px;
+}
+@media (min-width: 640px) {
+	.customSvg > svg {
+		width: 22px;
+	}
+}
