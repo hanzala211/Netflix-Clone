@@ -47,12 +47,12 @@ export function Nav() {
         }
     }
 
-    return <nav className={`flex justify-between sm:items-center py-1 sm:py-0 items-start sm:px-12 px-1.5 h-[50px] sm:h-[70px] transition duration-100 fixed ${isScrolled ? "bg-[#141414] z-[100]" : "bg-transparent"} w-[100vw] z-10`}>
-        <div className="flex items-center sm:items-center sm:gap-5 gap-2">
+    return <nav className={`flex justify-between items-center py-1 sm:py-0 sm:px-12 px-1.5 h-[50px] sm:h-[70px] transition duration-100 fixed ${isScrolled ? "bg-[#141414] z-[100]" : "bg-transparent"} w-[100vw] z-10`}>
+        <div className="flex items-start sm:items-center sm:gap-5 gap-2">
             <Link to="/browse" onClick={() => setSearchQuery("")}><img src="/images/download1.png" alt="Netflix Log" className="sm:w-[7.5rem] w-[4rem]" /></Link>
             <div className="sm:hidden">
                 <select
-                    className="bg-transparent text-white py-1 px-1 pl-1 w-[50px] text-[8px] rounded-sm"
+                    className="bg-transparent text-white py-1 mt-2 px-1 w-[50px] text-[8px] rounded-sm"
                     onChange={(e) => navigate(e.target.value)}
                     value={window.location.pathname}
                 >
