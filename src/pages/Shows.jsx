@@ -49,18 +49,12 @@ export function Shows() {
             finally {
                 storeTime.current = setTimeout(() => {
                     setLoading(false);
-                }, 5000)
+                }, 2500)
             }
         }
         fetchTvShows();
         return () => { clearTimeout(storeTime.current) }
     }, [randomPage, apiKey, setLoading, setApiData, setHeroImage])
-    useEffect(() => {
-        const loadingTime = setTimeout(() => {
-            setLoading(false)
-        }, 2000)
-        return () => clearTimeout(loadingTime)
-    }, [])
     function randomNumber(movies) {
         const randomHeroImage = Math.floor(Math.random() * movies.length) + 1;
         return randomHeroImage

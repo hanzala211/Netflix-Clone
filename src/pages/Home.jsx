@@ -46,19 +46,13 @@ export function Home() {
                 finally {
                     storeTime.current = setTimeout(() => {
                         setLoading(false);
-                    }, 1000)
+                    }, 2500)
                 }
             }
         }
         fetchMovies()
         return () => { clearTimeout(storeTime.current) }
     }, [randomPage, setApiData, setLoading, setHeroImage, apiKey]); // to render movie for the main Image
-    useEffect(() => {
-        const loadingTime = setTimeout(() => {
-            setLoading(false)
-        }, 2000)
-        return () => clearTimeout(loadingTime)
-    }, [])
     function randomNumber(movies) {
         const randomHeroImage = Math.floor(Math.random() * movies.length) + 1;
         return randomHeroImage
