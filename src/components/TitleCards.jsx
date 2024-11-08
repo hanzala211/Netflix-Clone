@@ -117,7 +117,7 @@ export function TitleCards({ obj }) {
                     afterChange={() => setIsClickable(true)}
                 >
                     {loading ? Array.from({ length: itemsToShow }, (_, i) => (
-                        <div key={i} className="bg-[#424242] h-[10vh] w-full max-w-[40vw] animate-pulse rounded-lg" />
+                        <div key={i} className="bg-[#424242] h-[10vh] sm:h-[15vh] w-[95%] max-w-[40vw] animate-pulse rounded-lg" />
                     ))
                         : (
                             apiData.map((item, i) => {
