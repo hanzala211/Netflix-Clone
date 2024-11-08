@@ -51,12 +51,12 @@ export function MovieDetails() {
                     }}
                 >
                     <IoCloseSharp onClick={closeModal} className="absolute sm:right-5 sm:top-5 top-3 right-3 sm:text-3xl text-xl bg-[#141414] cursor-pointer border-[1px] border-[#141414] rounded-full" />
-                    <div className={`absolute -translate-y-[50%] sm:left-12 left-4 z-20 ${(relatedMovies.length === 0 || relatedMovies === undefined) ? "lg:top-[18%] sm:top-[8rem] 375:top-[6rem] 400:top-[9.5rem]" : isOpen ? "lg:top-[10%] sm:top-[7rem] 375:top-[6rem] 400:top-[9.5rem]" : "lg:top-[18%] sm:top-[8rem] 375:top-[6rem] 400:top-[9.5rem]"}`}>
+                    <div className={`absolute -translate-y-[50%] sm:left-12 left-4 z-20 ${(relatedMovies.length === 0 || relatedMovies === undefined) ? "lg:top-[19rem] sm:top-[5rem] 375:top-[6rem] 400:top-[9.5rem]" : isOpen ? "lg:top-[19rem] sm:top-[5rem] 375:top-[6rem] 400:top-[9.5rem]" : "lg:top-[19rem] sm:top-[5rem] 375:top-[6rem] 400:top-[9.5rem]"}`}>
                         <div className="flex items-center gap-3 mb-2">
-                            <img src="/images/4375011_logo_netflix_icon.png" className="sm:w-16 w-4" />
-                            <h1 className="sm:tracking-[1rem] tracking-[0.5rem] font-bold text-[9px] sm:text-[20px] ">{foundData.media_type === "tv" ? "SERIES" : "FILM"}</h1>
+                            <img src="/images/4375011_logo_netflix_icon.png" className="sm:w-10 w-4" />
+                            <h1 className="sm:tracking-[1rem] tracking-[0.5rem] font-bold text-[9px] sm:text-[18px] ">{foundData.media_type === "tv" ? "SERIES" : "FILM"}</h1>
                         </div>
-                        <h1 className="w-[60%] sm:text-[40px] text-[13px] mb-2">{foundData.original_name || foundData.title}</h1>
+                        <h1 className="w-[60%] sm:text-[30px] sm:ml-1.5 text-[13px] mb-2">{foundData.original_name || foundData.title}</h1>
                         <div className="flex gap-2 items-center">
                             <PlayBtn setSelectedPlay={setSelectedPlay} heroImage={foundData} />
                             <PlusBtn />
@@ -98,7 +98,7 @@ export function MovieDetails() {
                     </div>
                 </div>
                 {(relatedMovies.length !== 0 || relatedMovies !== undefined) && <h1 className="sm:mx-11 mx-4 sm:mt-5 mt-3 text-[17px] sm:text-[21px] font-semibold">More Like This</h1>}
-                <div className={`grid sm:grid-cols-3 grid-cols-2 pt-2 pb-5 ${isOpen ? "" : "sm:h-[62rem] h-[25rem] overflow-hidden"} border-b-2 border-[#404040] sm:mx-11 mx-4 mr-1.5 `} style={{ rowGap: "20px" }}>
+                <div className={`grid sm:grid-cols-3 grid-cols-2 pt-2 pb-5 ${isOpen ? "" : "sm:h-[62rem] h-[30rem] overflow-hidden"} border-b-2 border-[#404040] sm:mx-11 mx-4 `} style={{ rowGap: "20px" }}>
                     {relatedMovies?.length > 0 && relatedMovies.map((item, i) => (
                         <RelatedMovies key={i} item={item} />
                     ))}
