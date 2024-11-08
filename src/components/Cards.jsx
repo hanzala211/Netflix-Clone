@@ -17,7 +17,7 @@ function Cards({ item, apiData, index }) {
     >
         <img
             className={`rounded-md w-[100%] mr-0 max-h-[18vh] transition-transform z-10 duration-300  ${hoveredIndex === index ? 'sm:delay-500 sm:scale-125 sm:-translate-y-14 sm:z-[150]' : ''} cursor-pointer object-fill`}
-            src={item.backdrop_path ? `${image720Url}${item.backdrop_path}` : '/public/images/Broken.png'}
+            src={item.backdrop_path ? `${image720Url}${item.backdrop_path}` : '/images/Broken.png'}
             alt={item.title}
         />
         <img src="/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className={`lg:w-6 lg:h-6 w-3 h-3  absolute transition-transform duration-300 top-2 left-1 z-[10] sm:z-[100] ${hoveredIndex === index ? "delay-500 sm:-translate-y-[4.7rem] sm:-translate-x-9 sm:z-[1500000]" : ""}`} />

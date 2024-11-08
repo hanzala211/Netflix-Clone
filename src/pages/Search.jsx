@@ -35,9 +35,9 @@ export function Search() {
 
     }, [searchQuery, apiKey, navigate, setSearchResults]);
 
-    return <div className="sm:pt-44 pt-12 sm:px-16 px-5">
+    return <div className="sm:pt-44 pt-12 sm:px-16 px-3">
         <h2 className="sm:mb-6 mb-3 ml-2"><span className="text-[#808080] sm:text-[18px] text-[12px]">More To Explore:</span> <span className="capitalize sm:text-[25px] text-[15px]">{searchQuery}</span></h2>
-        <div className="grid sm:grid-cols-6 grid-cols-2 grid-flow-row" style={{ rowGap: "35px", columnGap: "15px" }}>
+        <div className="grid sm:grid-cols-6 space-x-1 grid-cols-2 grid-flow-row" style={{ rowGap: "35px", columnGap: "15px" }}>
             {searchResults.length !== 0 && searchResults?.map((item, i) => {
                 return <Link key={uuidv4()} to={`${window.location.href}?jbv=${item?.id}`} onClick={() => {
                     setSelectedID(item.id);
