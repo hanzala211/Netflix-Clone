@@ -9,6 +9,9 @@ export default {
 			colors: {
 				'hover-bg': 'rgba(20, 20, 20, 0.7)',
 			},
+			screens: {
+				375: '375px',
+			},
 		},
 	},
 	plugins: [],
