@@ -52,7 +52,7 @@ export function Nav() {
             <Link to="/browse" onClick={() => setSearchQuery("")}><img src="/images/download1.png" alt="Netflix Log" className="sm:w-[7.5rem] w-[4rem]" /></Link>
             <div className="sm:hidden">
                 <select
-                    className="bg-transparent text-white py-1 mt-2 px-1 w-[50px] text-[8px] rounded-sm"
+                    className="bg-transparent text-white py-1 px-1 w-[50px] text-[8px] rounded-sm"
                     onChange={(e) => navigate(e.target.value)}
                     value={window.location.pathname}
                 >
