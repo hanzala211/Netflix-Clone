@@ -19,27 +19,7 @@ export function Watch() {
     const [duration, setDuration] = useState(0);
     const [isFull, setIsFull] = useState(false);
     const [remainingTime, setRemainingTime] = useState(0);
-    const [isVideoLoading, setIsVideoLoading] = useState(false);
-
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-        const handleLoading = () => setIsVideoLoading(true);
-        const handlePlaying = () => setIsVideoLoading(false);
-        video.addEventListener("loadstart", handleLoading);
-        video.addEventListener("waiting", handleLoading);
-        video.addEventListener("playing", handlePlaying);
-        video.addEventListener("canplay", handlePlaying);
-        video.addEventListener("canplaythrough", handlePlaying);
-
-        return () => {
-            video.removeEventListener("loadstart", handleLoading);
-            video.removeEventListener("waiting", handleLoading);
-            video.removeEventListener("playing", handlePlaying);
-            video.removeEventListener("canplay", handlePlaying);
-            video.removeEventListener("canplaythrough", handlePlaying);
-        };
-    }, []);
+    const [isVideoLoading, setIsVideoLoading] = useState(true);
 
     useEffect(() => {
         const options = {
@@ -182,10 +162,15 @@ export function Watch() {
                         onLoadedMetadata={handleLoadedMetadata}
                         onPlay={() => lockOrientation("landscape")}
                         onPause={unlockOrientation}
+                        onLoadStart={() => setIsVideoLoading(true)}
+                        onWaiting={() => setIsVideoLoading(true)}
+                        onPlaying={() => setIsVideoLoading(false)}
+                        onCanPlay={() => setIsVideoLoading(false)}
+                        onCanPlayThrough={() => setIsVideoLoading(false)}
                     ></video>
                     {isVideoLoading && (
-                        <div className="fixed inset-0 z-[10000] pointer-events-none">
-                            <PropagateLoader color="#BE0D08" className="absolute z-[10000] rounded-xl top-1/2 -translate-y-1/2 left-1/2" />
+                        <div className="fixed inset-0 z-[11000] pointer-events-none">
+                            <PropagateLoader color="#BE0D08" className="absolute z-[11000] rounded-xl top-1/2 -translate-y-1/2 left-1/2" />
                         </div>
                     )}
                     <button

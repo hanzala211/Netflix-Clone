@@ -103,7 +103,7 @@ export function Nav() {
 
         <div className="flex sm:gap-5 gap-2 items-center bg-transparent">
             <div className="relative flex justify-end sm:block">
-                <BsSearch onClick={toggleSearch} className={`sm:text-[17px] text-[13px] cursor-pointer transition-[left] duration-300 ease-out ${isSearching ? 'absolute top-1/2 -translate-y-1/2 left-[3.7rem] sm:left-2 ' : 'sm:translate-y-3 translate-y-1.5'}`} />
+                <BsSearch onClick={toggleSearch} className={`sm:text-[17px] text-[13px] cursor-pointer transition-[left] duration-300 ease-out ${isSearching ? 'absolute top-1/2 -translate-y-1/2 left-[4rem] sm:left-2 ' : 'sm:translate-y-3 translate-y-1.5'}`} />
                 <input
                     type="text"
                     ref={searchRef}

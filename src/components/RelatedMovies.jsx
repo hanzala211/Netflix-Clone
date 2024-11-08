@@ -6,8 +6,8 @@ import { HiOutlinePlus } from "react-icons/hi";
 export function RelatedMovies({ item }) {
     const { image720Url } = useMovies();
     const { setSelectedPlay } = useUI();
-    return <div className="rounded-md w-[90%]">
-        <div className={`sm:bg-cover bg-contain bg-no-repeat sm:bg-center sm:h-[15vh] h-[3.5rem] bg-top relative rounded-t-md group cursor-pointer`} style={{ backgroundImage: `url('${image720Url}${item?.backdrop_path || item?.poster_path || "/default-placeholder.png"}')` }}>
+    return <div className="rounded-md max-w-[90%] h-[10rem] sm:h-0 mb-1.5 sm:mb-0">
+        <div className={`sm:bg-cover bg-contain bg-no-repeat sm:bg-center sm:h-[15vh] h-[5rem] bg-top relative rounded-t-md group cursor-pointer`} style={{ backgroundImage: `url('${image720Url}${item?.backdrop_path || item?.poster_path || "/default-placeholder.png"}')` }}>
             <Link to="/watch" onClick={() => setSelectedPlay(() => item)}>
                 <img src="/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className="sm:w-6 sm:h-6 w-3 h-3 absolute sm:top-2 left-1 top-1" />
                 <p className="text-white sm:text-sm text-[10px] absolute sm:top-2 right-1 top-0.5">{item?.release_date ? item.release_date.slice(0, 4) : (item?.first_air_date ? item.first_air_date.slice(0, 4) : 'N/A')}</p>

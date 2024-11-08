@@ -43,15 +43,15 @@ export function MovieDetails() {
     return (
         <>
             <div className="overlay" onClick={closeModal} />
-            <div className="absolute w-full lg:max-w-[50%] sm:max-w-[90%] 375:max-w-[78%]  z-[10000] rounded-xl top-10 bg-[#141414] pb-10">
+            <div className="absolute w-full lg:max-w-[50%] sm:max-w-[90%] 375:max-w-[78%] z-[10000] rounded-xl top-10 bg-[#141414] pb-10">
                 <div
-                    className="sm:h-[50vh] bg-no-repeat sm:bg-cover bg-contain h-[25vh] w-[100%] rounded-xl"
+                    className="sm:h-[50vh] bg-no-repeat sm:bg-cover bg-contain h-[20vh] w-[100%] rounded-xl"
                     style={{
                         backgroundImage: `linear-gradient(0deg,#181818,transparent 50%), url('${imageBaseUrl}${foundData.backdrop_path || foundData.poster_path}')`
                     }}
                 >
                     <IoCloseSharp onClick={closeModal} className="absolute sm:right-5 sm:top-5 top-3 right-3 sm:text-3xl text-xl bg-[#141414] cursor-pointer border-[1px] border-[#141414] rounded-full" />
-                    <div className={`absolute -translate-y-[50%] sm:left-12 left-4 z-20 ${(relatedMovies.length === 0 || relatedMovies === undefined) ? "lg:top-[18%] sm:top-[8rem] 375:top-[6rem]" : isOpen ? "lg:top-[10%] sm:top-[8rem] 375:top-[6rem]" : "lg:top-[18%] sm:top-[8rem] 375:top-[6rem]"}`}>
+                    <div className={`absolute -translate-y-[50%] sm:left-12 left-4 z-20 ${(relatedMovies.length === 0 || relatedMovies === undefined) ? "lg:top-[18%] sm:top-[8rem] 375:top-[6rem]" : isOpen ? "lg:top-[10%] sm:top-[7rem] 375:top-[7rem]" : "lg:top-[18%] sm:top-[8rem] 375:top-[7rem]"}`}>
                         <div className="flex items-center gap-3 mb-2">
                             <img src="/images/4375011_logo_netflix_icon.png" className="sm:w-16 w-4" />
                             <h1 className="sm:tracking-[1rem] tracking-[0.5rem] font-bold text-[10px] sm:text-[20px] ">{foundData.media_type === "tv" ? "SERIES" : "FILM"}</h1>
@@ -98,7 +98,7 @@ export function MovieDetails() {
                     </div>
                 </div>
                 {(relatedMovies.length !== 0 || relatedMovies !== undefined) && <h1 className="sm:mx-11 mx-4 sm:mt-5 mt-3 text-[17px] sm:text-[21px] font-semibold">More Like This</h1>}
-                <div className={`grid grid-cols-3 pt-2 pb-5 ${isOpen ? "" : "sm:h-[62rem] h-[25rem] overflow-hidden"} border-b-2 border-[#404040] sm:mx-11 mx-4 mr-1.5 `} style={{ rowGap: "20px" }}>
+                <div className={`grid sm:grid-cols-3 grid-cols-2 pt-2 pb-5 ${isOpen ? "" : "sm:h-[62rem] h-[25rem] overflow-hidden"} border-b-2 border-[#404040] sm:mx-11 mx-4 mr-1.5 `} style={{ rowGap: "20px" }}>
                     {relatedMovies?.length > 0 && relatedMovies.map((item, i) => (
                         <RelatedMovies key={i} item={item} />
                     ))}
