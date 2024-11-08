@@ -156,7 +156,7 @@ export function Watch() {
                     <video
                         ref={videoRef}
                         autoPlay
-                        className="w-full sm:h-[100vh] h-[90vh] relative sm:object-fill object-contain"
+                        className="w-full sm:h-[100vh] h-[95vh] relative sm:object-fill object-contain"
                         src={url.url}
                         onTimeUpdate={handleTimeUpdate}
                         onLoadedMetadata={handleLoadedMetadata}
@@ -174,7 +174,7 @@ export function Watch() {
                         </div>
                     )}
                     <button
-                        className="absolute top-8 left-7 hover:scale-125 transition-transform duration-200 ease-in-out"
+                        className="absolute sm:top-8 top-6 sm:left-7 left-5 hover:scale-125 transition-transform duration-200 ease-in-out"
                         onClick={() => {
                             setPlayData([]);
                             setUrl([]);
