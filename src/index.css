@@ -148,7 +148,7 @@ body::-webkit-scrollbar {
 }
 .react-multi-carousel-track {
 	display: flex;
-	padding-left: 180px;
+	padding-left: 192px;
 }
 .custom-carousel > ul > li {
 	width: 11.03rem !important;

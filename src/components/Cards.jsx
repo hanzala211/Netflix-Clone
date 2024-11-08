@@ -16,13 +16,13 @@ function Cards({ item, apiData, index }) {
         onMouseLeave={() => setHoveredIndex(null)}
     >
         <img
-            className={`rounded-md w-[100%] mr-0 max-h-[18vh] transition-transform z-10 duration-300  ${hoveredIndex === index ? 'delay-500 scale-125 -translate-y-14 z-[150]' : ''} cursor-pointer object-fill`}
+            className={`rounded-md w-[100%] mr-0 max-h-[18vh] transition-transform z-10 duration-300  ${hoveredIndex === index ? 'sm:delay-500 sm:scale-125 sm:-translate-y-14 sm:z-[150]' : ''} cursor-pointer object-fill`}
             src={item.backdrop_path ? `${image720Url}${item.backdrop_path}` : '/public/images/Broken.png'}
             alt={item.title}
         />
-        <img src="/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className={`lg:w-6 lg:h-6 w-3 h-3  absolute transition-transform duration-300 top-2 left-1 z-[100] ${hoveredIndex === index ? "delay-500 -translate-y-[4.7rem] -translate-x-9 z-[1500000]" : ""}`} />
+        <img src="/images/4375011_logo_netflix_icon.png" alt="Netflix Logo" className={`lg:w-6 lg:h-6 w-3 h-3  absolute transition-transform duration-300 top-2 left-1 z-[10] sm:z-[100] ${hoveredIndex === index ? "delay-500 sm:-translate-y-[4.7rem] sm:-translate-x-9 sm:z-[1500000]" : ""}`} />
         <div
-            className={`absolute z-[110] bottom-[-5vw] flex-col w-[100%] py-7 px-5 bg-[#141414] flex gap-3 rounded-b-md transition-transform duration-300 ${hoveredIndex === index ? 'delay-500 opacity-100 scale-125 shadow-md shadow-[#010101]' : 'opacity-0 scale-0'}`}
+            className={`absolute z-[110] bottom-[-5vw] flex-col w-[100%] py-7 px-5 bg-[#141414] flex gap-3 rounded-b-md transition-transform duration-300 ${hoveredIndex === index ? 'delay-500 sm:opacity-100 sm:scale-125 shadow-md shadow-[#010101]' : 'opacity-0 scale-0'}`}
         >
             <div className="flex justify-between w-full">
                 <div className="flex gap-2" >

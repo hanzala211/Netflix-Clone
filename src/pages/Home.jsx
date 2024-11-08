@@ -56,7 +56,7 @@ export function Home() {
     useEffect(() => {
         const loadingTime = setTimeout(() => {
             setLoading(false)
-        }, 5000)
+        }, 2000)
         return () => clearTimeout(loadingTime)
     }, [])
     function randomNumber(movies) {
@@ -66,7 +66,7 @@ export function Home() {
     return <>
         {!loading ? <section>
             <HeroSection />
-            <div className="sm:-mt-[25vh] -mt-[12vh]">
+            <div className="sm:-mt-[25vh] -mt-[9vh]">
                 {moviesData.map((item, i) => {
                     return <>
                         <TitleCards key={i} index={i} obj={item} />

@@ -68,20 +68,20 @@ export function Shows() {
     return <>
         {!loading ? <section>
             <HeroSection />
-            <div className="sm:-mt-[25vh] -mt-[12vh]">
+            <div className="sm:-mt-[25vh] -mt-[9vh]">
                 {showsData.map((item, i) => {
                     return <TitleCards key={i} index={i} obj={item} />
                 })
                 }
             </div>
-        </section > : <div style={{ padding: '1rem', paddingTop: "10rem" }} className='flex gap-5'>
+        </section > : <div style={{ padding: '1rem', paddingTop: "10rem" }} className='flex gap-5 flex-wrap'>
             {
-                Array.from({ length: 5 }, (_, i) => {
+                Array.from({ length: 6 }, (_, i) => {
                     return <Skeleton
                         key={i}
                         variant="rectangular"
-                        width="30%"
-                        height={200}
+                        width={290}
+                        height={150}
                         animation="wave"
                         sx={{ bgcolor: "grey.800" }}
                         style={{ borderRadius: "10px" }}

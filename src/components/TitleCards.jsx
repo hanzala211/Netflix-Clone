@@ -1,14 +1,17 @@
 import { useEffect, useState, useMemo, useRef } from "react";
-import { useMovies } from "../context/moviesContext";
+import { useMovies, useSelect, useUI } from "../context/moviesContext";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Cards from "./Cards";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { DetailsModal } from "./DetailsModal";
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from "react-router-dom";
 
 export function TitleCards({ obj }) {
     const { apiKey } = useMovies();
+    const { setModalLoading } = useUI();
+    const { setSelectedData, setSelectedID } = useSelect()
     const [apiData, setApiData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [randomPage] = useState(Math.floor(Math.random() * 50) + 1);
@@ -84,7 +87,7 @@ export function TitleCards({ obj }) {
     };
     return (
         <>
-            <div className="flex flex-col group mt-16 relative sm:px-12 px-4 w-[100vw] overflow-hidden">
+            <div className="flex flex-col group sm:mt-16 mt-8 relative sm:px-12 px-4 w-[100vw] overflow-hidden sm:overflow-visible">
                 <div className="flex items-end justify-between">
                     <h2 className="sm:text-[30px] text-[15px] font-medium mb-4 relative z-[1]">{obj.heading}</h2>
                     <div className="flex gap-0.5 mb-3 mr-5">
@@ -102,7 +105,7 @@ export function TitleCards({ obj }) {
                     > */}
                 <Carousel
                     ref={carouselRef}
-                    swipeable={true}
+                    swipeable={false}
                     draggable={false}
                     responsive={responsive}
                     infinite={true}
@@ -114,11 +117,15 @@ export function TitleCards({ obj }) {
                     afterChange={() => setIsClickable(true)}
                 >
                     {loading ? Array.from({ length: itemsToShow }, (_, i) => (
-                        <div key={i} className="bg-[#424242] h-[18vh] w-full max-w-[15vw] animate-pulse rounded-lg" />
+                        <div key={i} className="bg-[#424242] h-[10vh] w-full max-w-[40vw] animate-pulse rounded-lg" />
                     ))
                         : (
                             apiData.map((item, i) => {
-                                return <Cards key={uuidv4()} index={i} item={item} apiData={apiData} />
+                                return <Link key={uuidv4()} to={`${window.location.href}?jbv=${item?.id}`} onClick={() => {
+                                    setSelectedID(item.id);
+                                    setSelectedData(apiData);
+                                    setModalLoading(true);
+                                }}><Cards index={i} item={item} apiData={apiData} /></Link>
                             })
                         )}
                 </Carousel>
