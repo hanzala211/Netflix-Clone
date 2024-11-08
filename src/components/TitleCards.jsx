@@ -87,7 +87,7 @@ export function TitleCards({ obj }) {
     };
     return (
         <>
-            <div className="flex flex-col group sm:mt-16 mt-8 relative sm:px-12 px-4 w-[100vw] overflow-hidden sm:overflow-visible">
+            <div className="flex flex-col group sm:mt-16 mt-8 relative sm:px-12 px-2.5 w-[100vw] overflow-hidden sm:overflow-visible">
                 <div className="flex items-end justify-between">
                     <h2 className="sm:text-[30px] text-[15px] font-medium mb-4 relative z-[1]">{obj.heading}</h2>
                     <div className="flex gap-0.5 mb-3 mr-5">
