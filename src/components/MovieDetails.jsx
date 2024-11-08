@@ -43,7 +43,7 @@ export function MovieDetails() {
     return (
         <>
             <div className="overlay" onClick={closeModal} />
-            <div className="absolute w-full sm:max-w-[50%] max-w-[95%] z-[10000] rounded-xl top-10 bg-[#141414] pb-10">
+            <div className="absolute w-full sm:max-w-[50%] max-w-[90%] z-[10000] rounded-xl top-10 bg-[#141414] pb-10">
                 <div
                     className="sm:h-[50vh] bg-no-repeat sm:bg-cover bg-contain h-[25vh] w-[100%] rounded-xl"
                     style={{
@@ -51,7 +51,7 @@ export function MovieDetails() {
                     }}
                 >
                     <IoCloseSharp onClick={closeModal} className="absolute sm:right-5 sm:top-5 top-3 right-3 sm:text-3xl text-xl bg-[#141414] cursor-pointer border-[1px] border-[#141414] rounded-full" />
-                    <div className={`absolute -translate-y-[50%] sm:left-12 left-5 z-20 ${(relatedMovies.length === 0 || relatedMovies === undefined) ? "sm:top-[18%] top-[9rem]" : isOpen ? "sm:top-[10%] top-[9rem]" : "sm:top-[18%] top-[9rem]"}`}>
+                    <div className={`absolute -translate-y-[50%] sm:left-12 left-4 z-20 ${(relatedMovies.length === 0 || relatedMovies === undefined) ? "sm:top-[18%] top-[8rem]" : isOpen ? "sm:top-[10%] top-[8rem]" : "sm:top-[18%] top-[8rem]"}`}>
                         <div className="flex items-center gap-3 mb-2">
                             <img src="/images/4375011_logo_netflix_icon.png" className="sm:w-16 w-4" />
                             <h1 className="sm:tracking-[1rem] tracking-[0.5rem] font-bold text-[10px] sm:text-[20px] ">{foundData.media_type === "tv" ? "SERIES" : "FILM"}</h1>
@@ -66,7 +66,7 @@ export function MovieDetails() {
                         </div>
                     </div>
                 </div>
-                <div className="flex sm:mx-11 mx-5 pt-5 pb-7 border-b-2 border-[#404040]">
+                <div className="flex sm:mx-11 mx-4 pt-5 pb-7 border-b-2 border-[#404040]">
                     <div className="flex flex-col gap-[10px] w-[65%]">
                         <div className="flex items-center sm:gap-3 gap-2">
                             <p className="text-[#BCBCBC] sm:text-[14px] text-[10px]">{foundData.release_date ? foundData.release_date.slice(0, 4) : foundData.first_air_date.slice(0, 4)}</p>
@@ -85,20 +85,20 @@ export function MovieDetails() {
                     <div className="flex flex-col sm:gap-[17px] gap-[12px] w-[35%]">
                         <div className="flex gap-2">
                             <span className="text-[#777777] sm:text-[13px] text-[9px]">Cast:</span>
-                            <p className="sm:text-[13px] text-[10px] tracking-wider flex">{castData?.status_message === 'The resource you requested could not be found.' ? "Nothing" : (castData?.cast.length > 0 || castData !== undefined) ? castData?.cast.slice(0, 3).map((item) => item.name).join(", ") : "N/A"}</p>
+                            <p className="sm:text-[13px] text-[7px] tracking-wider flex">{castData?.status_message === 'The resource you requested could not be found.' ? "Nothing" : (castData?.cast.length > 0 || castData !== undefined) ? castData?.cast.slice(0, 3).map((item) => item.name).join(", ") : "N/A"}</p>
                         </div>
                         <div className="flex gap-2">
                             <span className="text-[#777777] sm:text-[13px] text-[9px]">Crew:</span>
-                            <p className="sm:text-[13px] text-[10px] tracking-wider flex">{castData?.status_message === 'The resource you requested could not be found.' ? "Nothing" : castData?.crew.length > 0 ? castData?.crew.slice(0, 3).map((item) => item.name).join(", ") : "N/A"}</p>
+                            <p className="sm:text-[13px] text-[7px] tracking-wider flex">{castData?.status_message === 'The resource you requested could not be found.' ? "Nothing" : castData?.crew.length > 0 ? castData?.crew.slice(0, 3).map((item) => item.name).join(", ") : "N/A"}</p>
                         </div>
                         <div className="flex gap-2">
                             <span className="text-[#777777] sm:text-[13px] text-[9px]">This show is:</span>
-                            <p className="sm:text-[13px] text-[10px] tracking-wider flex">Exciting, Emotional, Offbeat</p>
+                            <p className="sm:text-[13px] text-[7px] tracking-wider flex">Exciting, Emotional, Offbeat</p>
                         </div>
                     </div>
                 </div>
-                {(relatedMovies.length !== 0 || relatedMovies !== undefined) && <h1 className="sm:mx-11 mx-5 sm:mt-5 mt-3 text-[17px] sm:text-[21px] font-semibold">More Like This</h1>}
-                <div className={`grid grid-cols-3 pt-2 pb-5 ${isOpen ? "" : "sm:h-[62rem] h-[25rem] overflow-hidden"} border-b-2 border-[#404040] sm:mx-11 mx-5 `} style={{ rowGap: "20px" }}>
+                {(relatedMovies.length !== 0 || relatedMovies !== undefined) && <h1 className="sm:mx-11 mx-4 sm:mt-5 mt-3 text-[17px] sm:text-[21px] font-semibold">More Like This</h1>}
+                <div className={`grid grid-cols-3 pt-2 pb-5 ${isOpen ? "" : "sm:h-[62rem] h-[25rem] overflow-hidden"} border-b-2 border-[#404040] sm:mx-11 mx-4 mr-1.5 `} style={{ rowGap: "20px" }}>
                     {relatedMovies?.length > 0 && relatedMovies.map((item, i) => (
                         <RelatedMovies key={i} item={item} />
                     ))}
