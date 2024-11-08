@@ -45,7 +45,7 @@ export function MovieDetails() {
             <div className="overlay" onClick={closeModal} />
             <div className="absolute w-full sm:max-w-[50%] max-w-[95%] z-[10000] rounded-xl top-10 bg-[#141414] pb-10">
                 <div
-                    className="sm:h-[50vh] bg-no-repeat sm:bg-cover bg-contain h-[25vh] rounded-xl"
+                    className="sm:h-[50vh] bg-no-repeat sm:bg-cover bg-contain h-[25vh] w-[100%] rounded-xl"
                     style={{
                         backgroundImage: `linear-gradient(0deg,#181818,transparent 50%), url('${imageBaseUrl}${foundData.backdrop_path || foundData.poster_path}')`
                     }}

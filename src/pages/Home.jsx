@@ -74,7 +74,7 @@ export function Home() {
                 })
                 }
             </div>
-        </section > : <div style={{ padding: '1rem', paddingTop: "10rem" }} className='flex gap-5 flex-wrap'>
+        </section > : <div className='flex gap-5 flex-wrap sm:p-4 p-5 sm:pt-[10rem] pt-[5rem]'>
             {
                 Array.from({ length: 6 }, (_, i) => {
                     return <Skeleton
