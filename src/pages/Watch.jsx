@@ -156,7 +156,7 @@ export function Watch() {
                     <video
                         ref={videoRef}
                         autoPlay
-                        className="w-full sm:h-[100vh] h-[97vh] relative sm:object-fill object-contain"
+                        className="w-full sm:h-[100vh] h-[90vh] relative sm:object-fill object-contain"
                         src={url.url}
                         onTimeUpdate={handleTimeUpdate}
                         onLoadedMetadata={handleLoadedMetadata}
