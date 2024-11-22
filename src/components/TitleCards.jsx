@@ -53,7 +53,6 @@ export function TitleCards({ obj }) {
             clearTimeout(timerRef.current)
         }
     }, [randomPage, apiKey, obj.category, obj.region]);
-
     function handleNext() {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % totalPages);
         if (carouselRef.current) {
@@ -114,7 +113,9 @@ export function TitleCards({ obj }) {
                     className="custom-carousel"
                     customTransition="transform 400ms cubic-bezier(0.25, 1, 0.5, 1)"
                     beforeChange={() => setIsClickable(false)}
-                    afterChange={() => setIsClickable(true)}
+                    afterChange={() => {
+                        setIsClickable(true)
+                    }}
                 >
                     {loading ? Array.from({ length: itemsToShow }, (_, i) => (
                         <div key={i} className="bg-[#424242] h-[10vh] sm:h-[15vh] w-[95%] max-w-[40vw] animate-pulse rounded-lg" />
