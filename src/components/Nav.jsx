@@ -24,21 +24,26 @@ export function Nav() {
             window.removeEventListener("touchmove", handleScroll);
         }
     })
+
     function toggleSearch() {
         setIsSearching(true);
         searchRef.current.focus();
     }
+
     function handleHoverIn() {
         setIsRotated(true);
     }
+
     function handleHoverOut() {
         setIsRotated(false);
     }
+
     function handleClick(event) {
         if (!searchRef?.current?.contains(event.target)) {
             setIsSearching(false);
         }
     }
+
     function handleScroll() {
         if (window.scrollY > 0 || document.documentElement.scrollTop > 0) {
             setIsScrolled(true);
@@ -58,10 +63,6 @@ export function Nav() {
                 >
                     <option className="bg-[#141414] hover:bg-[#2f2f2f] text-white" value="/browse">Home</option>
                     <option className="bg-[#141414] hover:bg-[#2f2f2f] text-white" value="/browse/genre/83">TV Shows</option>
-                    <option className="bg-[#141414] hover:bg-[#2f2f2f] text-white" value="/browse/genre/34399">Movies</option>
-                    <option className="bg-[#141414] hover:bg-[#2f2f2f] text-white" value="/latest">New & Popular</option>
-                    <option className="bg-[#141414] hover:bg-[#2f2f2f] text-white" value="/browse/my-list">My List</option>
-                    <option className="bg-[#141414] hover:bg-[#2f2f2f] text-white" value="/browse/original-audio">Browse by Languages</option>
                 </select>
             </div>
             <div className="sm:flex items-center sm:gap-6 gap-4 text-[14px] hidden">
@@ -82,22 +83,6 @@ export function Nav() {
                     setLoading(true)
                     setApiData([]);
                 }}>TV Shows</NavLink>
-                <NavLink className={({ isActive }) => !isActive ? "hover:text-[#B3B3B3] sm:text-[17px] text-[10px] transition-color duration-500 text-[#E5E5E5]" : "text-white font-bold"} to="/browse/genre/34399" onClick={() => {
-                    setLoading(true)
-                    setApiData([]);
-                }}>Movies</NavLink>
-                <NavLink className={({ isActive }) => !isActive ? "hover:text-[#B3B3B3] sm:text-[17px] text-[10px] transition-color duration-500 text-[#E5E5E5]" : "text-white font-bold"} to="/latest" onClick={() => {
-                    setLoading(true)
-                    setApiData([]);
-                }}>New & Popular</NavLink>
-                <NavLink className={({ isActive }) => !isActive ? "hover:text-[#B3B3B3] sm:text-[17px] text-[10px] transition-color duration-500 text-[#E5E5E5]" : "text-white font-bold"} to="/browse/my-list" onClick={() => {
-                    setLoading(true)
-                    setApiData([]);
-                }}>My List</NavLink>
-                <NavLink className={({ isActive }) => !isActive ? "hover:text-[#B3B3B3] sm:text-[17px] text-[10px] transition-color duration-500 text-[#E5E5E5]" : "text-white font-bold"} to="/browse/original-audio" onClick={() => {
-                    setLoading(true)
-                    setApiData([]);
-                }}>Browse by Languages</NavLink>
             </div>
         </div>
 
@@ -122,6 +107,5 @@ export function Nav() {
                 <IoMdArrowDropdown className={isRotated ? "rotate-180 transition-transform duration-100" : "rotate-0 transition-transform duration-100"} />
             </div>
         </div>
-
     </nav >
 }

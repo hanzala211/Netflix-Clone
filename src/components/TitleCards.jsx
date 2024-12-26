@@ -19,9 +19,11 @@ export function TitleCards({ obj }) {
     const [isClickable, setIsClickable] = useState(true);
     let timerRef = useRef(null);
     const carouselRef = useRef()
+
     const itemsToShow = document.querySelector("body").offsetWidth > 640 ? 6 : 2;
     const totalMovies = useMemo(() => apiData.length, [apiData]);
     const totalPages = useMemo(() => Math.ceil(totalMovies / itemsToShow), [totalMovies, itemsToShow]);
+
     useEffect(() => {
         if (!apiKey) return;
         const options = {
